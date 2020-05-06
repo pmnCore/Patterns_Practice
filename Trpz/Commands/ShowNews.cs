@@ -1,20 +1,13 @@
 ﻿using Trpz.News;
-using Trpz.News.ParseTypes;
 
 namespace Trpz.Commands
 {
     public class ShowNews : ICommand
     {
-        IParser Parser { get; set; }
-        IParseType Type { get; set; }
+        IParser Receiver { get; set; }
 
-        public ShowNews(IParser parser, IParseType type)
-        {
-            Parser = parser;
-            Type = type;
-            Parser.SetParseType(Type);
-        }
+        public ShowNews(IParser receiver) => Receiver = receiver;
 
-        public void Execute() => Parser.GetNews().DisplayNews();
+        public void Execute() => Receiver.GetNews().DisplayNews();
     }
 }

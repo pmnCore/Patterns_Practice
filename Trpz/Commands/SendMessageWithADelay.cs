@@ -3,21 +3,21 @@ using Trpz.SocialNetworks;
 
 namespace Trpz.Commands
 {
-    public class SendMessageWithADelay
+    public class SendMessageWithADelay : ICommand
     {
-        private MessageSender SocialNetwork { get; set; }
+        private IMessageSender Receiver { get; set; }
         private string Message { get; set; }
         private TimeSpan Time { get; set; }
         private object Target { get; set; }
 
-        public SendMessageWithADelay(MessageSender socialNetwork, string message, TimeSpan time, object target)
+        public SendMessageWithADelay(IMessageSender receiver, string message, TimeSpan time, object target)
         {
-            SocialNetwork = socialNetwork;
+            Receiver = receiver;
             Message = message;
             Time = time;
             Target = target;
         }
 
-        public void Execute() => SocialNetwork.SendMessageWithADelay(Message, Time, Target);
+        public void Execute() => Receiver.SendMessageWithADelay(Message, Time, Target);
     }
 }

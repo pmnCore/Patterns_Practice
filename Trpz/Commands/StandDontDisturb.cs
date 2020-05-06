@@ -4,10 +4,10 @@ namespace Trpz.Commands
 {
     public class StandDontDisturb : ICommand
     {
-        private SocialNetworkStatusSetter SocialNetwork { get; set; }
+        private IStatusSetter Receiver { get; set; }
 
-        public StandDontDisturb(SocialNetworkStatusSetter socialNetwork) => SocialNetwork = socialNetwork;
+        public StandDontDisturb(IStatusSetter receiver) => Receiver = receiver;
 
-        public void Execute() => SocialNetwork.StandDontDisturb();
+        public void Execute() => Receiver.StandDontDisturb();
     }
 }

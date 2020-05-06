@@ -4,10 +4,10 @@ namespace Trpz.Commands
 {
     public class StandAfk : ICommand
     {
-        private SocialNetworkStatusSetter SocialNetwork { get; set; }
+        private IStatusSetter Receiver { get; set; }
 
-        public StandAfk(SocialNetworkStatusSetter socialNetwork) => SocialNetwork = socialNetwork;
+        public StandAfk(IStatusSetter receiver) => Receiver = receiver;
 
-        public void Execute() => SocialNetwork.StandAfk();
+        public void Execute() => Receiver.StandAfk();
     }
 }

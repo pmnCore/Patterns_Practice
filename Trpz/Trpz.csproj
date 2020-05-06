@@ -65,18 +65,20 @@
     <Compile Include="News\INews.cs" />
     <Compile Include="News\DvachParser.cs" />
     <Compile Include="News\ITopDiscussion.cs" />
-    <Compile Include="News\ParseTypes\ApiParse.cs" />
+    <Compile Include="News\ParseTypes\JsonParse.cs" />
     <Compile Include="News\ParseTypes\IParseType.cs" />
-    <Compile Include="News\ParseTypes\WebDriverParse.cs" />
+    <Compile Include="News\ParseTypes\XmlParse.cs" />
     <Compile Include="Interpreter\NonterminalExpression.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocialNetworks\Discord.cs" />
-    <Compile Include="SocialNetworks\ISocialNetwork.cs" />
-    <Compile Include="SocialNetworks\ISQ.cs" />
-    <Compile Include="SocialNetworks\Facades\MessageSender.cs" />
+    <Compile Include="SocialNetworks\Facades\DiscordMessageSender.cs" />
+    <Compile Include="SocialNetworks\Facades\DiscordStatusSetter.cs" />
+    <Compile Include="SocialNetworks\Facades\IMessageSender.cs" />
+    <Compile Include="SocialNetworks\Facades\IStatusSetter.cs" />
+    <Compile Include="SocialNetworks\Facades\SkypeMessageSender.cs" />
+    <Compile Include="SocialNetworks\Facades\SkypeStatusSetter.cs" />
     <Compile Include="SocialNetworks\Skype.cs" />
-    <Compile Include="SocialNetworks\Facades\SocialNetworkStatusSetter.cs" />
     <Compile Include="Interpreter\TerminalExpression.cs" />
   </ItemGroup>
   <ItemGroup>

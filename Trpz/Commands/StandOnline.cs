@@ -4,10 +4,10 @@ namespace Trpz.Commands
 {
     public class StandOnline : ICommand
     {
-        private SocialNetworkStatusSetter SocialNetwork { get; set; }
+        private IStatusSetter Receiver { get; set; }
 
-        public StandOnline(SocialNetworkStatusSetter socialNetwork) => SocialNetwork = socialNetwork;
+        public StandOnline(IStatusSetter receiver) => Receiver = receiver;
 
-        public void Execute() => SocialNetwork.StandOnline();
+        public void Execute() => Receiver.StandOnline();
     }
 }

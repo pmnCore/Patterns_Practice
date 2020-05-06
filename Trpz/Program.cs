@@ -19,17 +19,42 @@ namespace Trpz
         //don't disturb mode form 11 pm to 6 am
         //open some sites at 6 am
 
-        //TODO: scripts in WoW (trinket->blind, vanish->sap, sap spammer, blind catching....) (additional)
 
         static void Main(string[] args)
         {
             AutomationTool tool = new AutomationTool();
-            tool.SetAction(new ShowNews(new DvachParser(), new ApiParse()));
+            
+            //receiver initialization
+            IParser dvach = new DvachParser();
+            dvach.SetParseType(new JsonParse());
+            
+            //command initialization
+            ICommand showNewsCommand = new ShowNews(dvach);
+
+            tool.SetAction(showNewsCommand);
+            dvach.SetParseType(new XmlParse());
             tool.ExecuteAction();
-            tool.SetAction(new StandAfk(new SocialNetworkStatusSetter(new ISQ())));
+
+            IParser bbc = new BbcParser();
+            bbc.SetParseType(new JsonParse());
+            ICommand topDiscussion = new ShowTopDiscussion(bbc);
+            tool.SetAction(topDiscussion);
             tool.ExecuteAction();
-            tool.SetAction( new SendMessageOfBeingLate(new MessageSender(new Discord()), new TimeSpan(0,0,20,0), "Vasya and another dodiks" ));
+
+            //facade receiver
+            IStatusSetter skypeStatusSetter = new SkypeStatusSetter(new Skype());
+            //command
+            ICommand standAfk = new StandAfk(skypeStatusSetter);
+            tool.SetAction(standAfk);
             tool.ExecuteAction();
+
+            //facade receiver
+            IMessageSender discordMessageSender = new DiscordMessageSender(new Discord());
+            //command
+            ICommand sendMessageWithADelay = new SendMessageWithADelay(discordMessageSender, "i still at work", new TimeSpan(0, 0, 40, 0), "Vasya and another dodiks");
+            tool.SetAction(sendMessageWithADelay);
+            tool.ExecuteAction();
+
             Console.ReadKey();
         }
     }

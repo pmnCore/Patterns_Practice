@@ -5,17 +5,17 @@ namespace Trpz.Commands
 {
     public class SendMessageOfBeingLate : ICommand
     {
-        private MessageSender SocialNetwork { get; set; }
+        private IMessageSender Receiver { get; set; }
         private TimeSpan Time { get; set; }
         private object Target { get; set; }
 
-        public SendMessageOfBeingLate(MessageSender socialNetwork, TimeSpan time, object target)
+        public SendMessageOfBeingLate(IMessageSender receiver, TimeSpan time, object target)
         {
-            SocialNetwork = socialNetwork;
+            Receiver = receiver;
             Time = time;
             Target = target;
         }
 
-        public void Execute() => SocialNetwork.SendMessageOfBeingLate(Time, Target);
+        public void Execute() => Receiver.SendMessageOfBeingLate(Time, Target);
     }
 }

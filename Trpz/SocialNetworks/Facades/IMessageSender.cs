@@ -2,16 +2,9 @@
 
 namespace Trpz.SocialNetworks
 {
-    public interface ISocialNetwork
+    public interface IMessageSender
     {
         void SendMessageOfBeingLate(TimeSpan time, object target);
-       
         void SendMessageWithADelay(string message, TimeSpan time, object target);
-        
-        void StandAfk();
-        
-        void StandDontDisturb();
-        
-        void StandOnline();
     }
 }
