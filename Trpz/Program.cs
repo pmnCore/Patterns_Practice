@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Trpz.Commands;
 using Trpz.News;
 using Trpz.News.ParseTypes;
@@ -22,39 +23,49 @@ namespace Trpz
 
         static void Main(string[] args)
         {
-            AutomationTool tool = new AutomationTool();
-            
             //receiver initialization
             IParser dvach = new DvachParser();
             dvach.SetParseType(new JsonParse());
-            
+
             //command initialization
             ICommand showNewsCommand = new ShowNews(dvach);
 
-            tool.SetAction(showNewsCommand);
+            AutomationTool.SetAction(showNewsCommand);
             dvach.SetParseType(new XmlParse());
-            tool.ExecuteAction();
+            AutomationTool.ExecuteAction();
 
             IParser bbc = new BbcParser();
             bbc.SetParseType(new JsonParse());
-            ICommand topDiscussion = new ShowTopDiscussion(bbc);
-            tool.SetAction(topDiscussion);
-            tool.ExecuteAction();
+            ICommand topDiscussionJson = new ShowTopDiscussion(bbc);
+            AutomationTool.SetAction(topDiscussionJson);
+            AutomationTool.ExecuteAction();
+
+            bbc.SetParseType(new XmlParse());
+            ICommand topDiscussionXml = new ShowTopDiscussion(bbc);
+            AutomationTool.SetAction(topDiscussionXml);
+            AutomationTool.ExecuteAction();
 
             //facade receiver
             IStatusSetter skypeStatusSetter = new SkypeStatusSetter(new Skype());
             //command
             ICommand standAfk = new StandAfk(skypeStatusSetter);
-            tool.SetAction(standAfk);
-            tool.ExecuteAction();
+            AutomationTool.SetAction(standAfk);
+            AutomationTool.ExecuteAction();
 
             //facade receiver
             IMessageSender discordMessageSender = new DiscordMessageSender(new Discord());
             //command
             ICommand sendMessageWithADelay = new SendMessageWithADelay(discordMessageSender, "i still at work", new TimeSpan(0, 0, 40, 0), "Vasya and another dodiks");
-            tool.SetAction(sendMessageWithADelay);
-            tool.ExecuteAction();
+            AutomationTool.SetAction(sendMessageWithADelay);
+            AutomationTool.ExecuteAction();
 
+            //List<string> commandList = new List<string>();
+            //commandList.Add("skype afk");
+            //commandList.Add("+");
+            //commandList.Add("skype online");
+            //Context context = new Context();
+            //IExpression expression = context.Evaluate(commandList);
+            //expression.Interpret();
             Console.ReadKey();
         }
     }

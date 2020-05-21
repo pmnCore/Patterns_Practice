@@ -1,19 +1,20 @@
 ﻿namespace Trpz
 {
-    public class NonterminalExpression : IExpression
+    public class CommandConcatenation : IExpression
     {
         private IExpression LeftExpression { get; set; }
         private IExpression RightExpression { get; set; }
 
-        public NonterminalExpression(IExpression left, IExpression right)
+        public CommandConcatenation(IExpression left, IExpression right)
         {
             LeftExpression = left;
             RightExpression = right;
         }
 
-        public void Interpret(Context context)
+        public void Interpret()
         {
-            throw new System.NotImplementedException();
+            LeftExpression.Interpret();
+            RightExpression.Interpret();
         }
     }
 }

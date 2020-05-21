@@ -54,6 +54,7 @@
     <Compile Include="Commands\StandOnline.cs" />
     <Compile Include="Commands\StartBracketAdding.cs" />
     <Compile Include="Commands\StopBracketAdding.cs" />
+    <Compile Include="Interpreter\CommandExpression.cs" />
     <Compile Include="Interpreter\Context.cs" />
     <Compile Include="Interpreter\IExpression.cs" />
     <Compile Include="News\BbcNews.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="News\ParseTypes\JsonParse.cs" />
     <Compile Include="News\ParseTypes\IParseType.cs" />
     <Compile Include="News\ParseTypes\XmlParse.cs" />
-    <Compile Include="Interpreter\NonterminalExpression.cs" />
+    <Compile Include="Interpreter\CommandConcatenation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocialNetworks\Discord.cs" />
@@ -79,7 +80,6 @@
     <Compile Include="SocialNetworks\Facades\SkypeMessageSender.cs" />
     <Compile Include="SocialNetworks\Facades\SkypeStatusSetter.cs" />
     <Compile Include="SocialNetworks\Skype.cs" />
-    <Compile Include="Interpreter\TerminalExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

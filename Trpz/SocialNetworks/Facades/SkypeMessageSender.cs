@@ -8,7 +8,6 @@ namespace Trpz.SocialNetworks
 
         public SkypeMessageSender(Skype skype) => Skype = skype;
 
-        public void SetSkype(Skype skype) => Skype = skype;
 
         public void SendMessageOfBeingLate(TimeSpan time, object target) => Skype.MessageOfBeingLate(time, target);
 

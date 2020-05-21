@@ -3,12 +3,12 @@ using Trpz.Commands;
 
 namespace Trpz
 {
-    class AutomationTool
+    static class AutomationTool
     {
-        ICommand Command { get; set; }
+        static ICommand Command { get; set; }
 
-        public void SetAction(ICommand action) => Command = action;
+        public static void SetAction(ICommand action) => Command = action;
 
-        public void ExecuteAction() => Command.Execute();
+        public static void ExecuteAction() => Command.Execute();
     }
 }

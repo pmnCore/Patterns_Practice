@@ -8,6 +8,6 @@ namespace Trpz.Commands
 
         public ShowTopDiscussion(IParser receiver) => Receiver = receiver;
 
-        public void Execute() => Receiver.GetNews().DisplayNews();
+        public void Execute() => Receiver.GeTopDiscussion().DisplayDiscussion();
     }
 }

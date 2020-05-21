@@ -6,8 +6,6 @@
 
         public SkypeStatusSetter(Skype skype) => Skype = skype;
 
-        public void SetSkype(Skype skype) => Skype = skype;
-
         public void StandAfk() => Skype.AfkMode();
 
         public void StandDontDisturb() => Skype.DontDisturbMode();
