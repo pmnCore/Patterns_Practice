@@ -5,7 +5,7 @@ namespace Trpz.SocialNetworks
     //3rd party lib
     public sealed class Skype
     {
-        public void MessageOfBeingLate(TimeSpan time, object target) => Console.WriteLine($"Skype: Message about being late at {time.Minutes} minutes has sent to {target.ToString()}");
+        public void MessageOfBeingLate(string comment, TimeSpan time, object target) => Console.WriteLine($"Skype: Message about being late at {time.Minutes} minutes has sent to {target.ToString()} with comment: '{comment}'");
 
         public void MessageWithADelay(string message, TimeSpan time, object target) => Console.WriteLine($"Skype: '{message}' will be send to {target.ToString()} after {time.Minutes} minutes.");
         

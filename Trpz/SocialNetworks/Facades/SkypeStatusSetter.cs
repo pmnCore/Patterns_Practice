@@ -2,9 +2,7 @@
 {
     public class SkypeStatusSetter : IStatusSetter
     {
-        private Skype Skype { get; set; }
-
-        public SkypeStatusSetter(Skype skype) => Skype = skype;
+        private Skype Skype { get; set; }=new Skype();
 
         public void StandAfk() => Skype.AfkMode();
 

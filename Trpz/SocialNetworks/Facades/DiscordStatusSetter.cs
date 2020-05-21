@@ -2,9 +2,7 @@
 {
     public class DiscordStatusSetter : IStatusSetter
     {
-        private Discord Discord { get; set; }
-
-        public DiscordStatusSetter(Discord discord) => Discord = discord;
+        private Discord Discord { get; set; } = new Discord();
 
         public void StandAfk() => Discord.StandInAfk();
 
