@@ -8,6 +8,6 @@ namespace Trpz.Commands
 
         public StandDontDisturb(IStatusSetter receiver) => Receiver = receiver;
 
-        public void Execute() => Receiver.StandDontDisturb();
+        public string Execute() => Receiver.StandDontDisturb();
     }
 }

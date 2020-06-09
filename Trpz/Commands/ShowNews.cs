@@ -8,6 +8,6 @@ namespace Trpz.Commands
 
         public ShowNews(IParser receiver) => Receiver = receiver;
 
-        public void Execute() => Receiver.GetNews().DisplayNews();
+        public string Execute() => Receiver.GetNews().DisplayNews();
     }
 }

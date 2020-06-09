@@ -2,6 +2,6 @@
 {
     public interface INews
     {
-        void DisplayNews();
+        string DisplayNews();
     }
 }

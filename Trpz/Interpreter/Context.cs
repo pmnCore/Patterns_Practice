@@ -1,24 +1,43 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Trpz
 {
     public class Context
     {
-        public IExpression Evaluate(List<string> list)
+        public IExpression Evaluate(string command)
         {
-            int postion = list.Count-1;
-            while (postion > 0)
+            List<string> splittedCommand = new List<string>(command.Split(' ').ToList());
+            int position = splittedCommand.Count() - 1;
+            while (position > 0)
             {
-                if (list[postion] != "+")
-                    postion--;
+                if (splittedCommand[position] != "+")
+                    position--;
                 else
                 {
-                    IExpression leftExpression = Evaluate(list.GetRange(0, postion));
-                    IExpression rightExpression = new CommandExpression(list[postion+1]);
+                    IExpression leftExpression = Evaluate(ConvertToCommandString(splittedCommand.GetRange(0, position)));
+                    IExpression rightExpression = new CommandExpression
+                        (ConvertToCommandString(splittedCommand.GetRange(position+1, splittedCommand.Count-(position+1))));
                     return new CommandConcatenation(leftExpression, rightExpression);
                 }
             }
-            return new CommandExpression(list[postion]);
+            return new CommandExpression(ConvertToCommandString(splittedCommand.GetRange(0, splittedCommand.Count)));
+        }
+
+        string ConvertToCommandString(List<string> splittedCommand)
+        {
+            string result = "";
+            for (int i = 0; i < splittedCommand.Count; i++)
+            {
+                result += splittedCommand[i];
+                if (i != splittedCommand.Count - 1)
+                {
+                    result += ' ';
+                }
+            }
+
+            return result;
         }
     }
 }

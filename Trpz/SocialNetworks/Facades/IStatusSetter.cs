@@ -2,8 +2,8 @@
 {
     public interface IStatusSetter
     {
-        void StandAfk();
-        void StandDontDisturb();
-        void StandOnline();
+        string StandAfk();
+        string StandDontDisturb();
+        string StandOnline();
     }
 }

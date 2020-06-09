@@ -4,10 +4,10 @@
     {
         private Skype Skype { get; set; }=new Skype();
 
-        public void StandAfk() => Skype.AfkMode();
+        public string StandAfk() => Skype.AfkMode();
 
-        public void StandDontDisturb() => Skype.DontDisturbMode();
+        public string StandDontDisturb() => Skype.DontDisturbMode();
 
-        public void StandOnline() => Skype.OnlineMode();
+        public string StandOnline() => Skype.OnlineMode();
     }
 }

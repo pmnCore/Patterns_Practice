@@ -8,6 +8,6 @@ namespace Trpz.Commands
 
         public StandAfk(IStatusSetter receiver) => Receiver = receiver;
 
-        public void Execute() => Receiver.StandAfk();
+        public string Execute() => Receiver.StandAfk();
     }
 }

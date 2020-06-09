@@ -1,4 +1,6 @@
-﻿namespace Trpz
+﻿using System.Runtime.Remoting.Messaging;
+
+namespace Trpz
 {
     public class CommandConcatenation : IExpression
     {
@@ -11,10 +13,7 @@
             RightExpression = right;
         }
 
-        public void Interpret()
-        {
-            LeftExpression.Interpret();
-            RightExpression.Interpret();
-        }
+        public string Interpret() => LeftExpression.Interpret() +"\n"+ RightExpression.Interpret();
+
     }
 }

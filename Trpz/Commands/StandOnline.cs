@@ -8,6 +8,6 @@ namespace Trpz.Commands
 
         public StandOnline(IStatusSetter receiver) => Receiver = receiver;
 
-        public void Execute() => Receiver.StandOnline();
+        public string Execute() => Receiver.StandOnline();
     }
 }

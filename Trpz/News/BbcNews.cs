@@ -8,9 +8,7 @@ namespace Trpz.News
 
         public BbcNews(string data) => Data = data;
 
-        public void DisplayNews()
-        {
-            Console.WriteLine($"BBC news: {Data}");
-        }
+        public string DisplayNews()=> $"BBC news: {Data}";
+        
     }
 }

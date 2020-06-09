@@ -8,6 +8,6 @@ namespace Trpz.News
 
         public DvachNews(string data) => Data = data;
 
-        public void DisplayNews() => Console.WriteLine($"Displaying news from 2ch.hk: {Data}");
+        public string DisplayNews() => $"Displaying news from 2ch.hk: {Data}";
     }
 }

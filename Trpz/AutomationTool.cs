@@ -9,6 +9,6 @@ namespace Trpz
 
         public static void SetAction(ICommand action) => Command = action;
 
-        public static void ExecuteAction() => Command.Execute();
+        public static string ExecuteAction() => Command.Execute();
     }
 }

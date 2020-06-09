@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trpz", "Trpz\Trpz.csproj", "{7005CA2E-55FC-4398-950D-9871A4435BE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceAutomationTool", "WebServiceAutomationTool\WebServiceAutomationTool.csproj", "{4BC48976-F4FE-44F7-8CB7-206B4DD2F344}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7005CA2E-55FC-4398-950D-9871A4435BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7005CA2E-55FC-4398-950D-9871A4435BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7005CA2E-55FC-4398-950D-9871A4435BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC48976-F4FE-44F7-8CB7-206B4DD2F344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC48976-F4FE-44F7-8CB7-206B4DD2F344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC48976-F4FE-44F7-8CB7-206B4DD2F344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC48976-F4FE-44F7-8CB7-206B4DD2F344}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

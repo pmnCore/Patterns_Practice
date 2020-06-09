@@ -4,10 +4,10 @@
     {
         private Discord Discord { get; set; } = new Discord();
 
-        public void StandAfk() => Discord.StandInAfk();
+        public string StandAfk() => Discord.StandInAfk();
 
-        public void StandDontDisturb() => Discord.StandInDontDisturb();
+        public string StandDontDisturb() => Discord.StandInDontDisturb();
 
-        public void StandOnline() => Discord.StandInOnline();
+        public string StandOnline() => Discord.StandInOnline();
     }
 }

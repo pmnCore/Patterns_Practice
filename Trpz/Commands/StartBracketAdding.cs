@@ -2,7 +2,7 @@
 {
     public class StartBracketAdding : ICommand
     {
-        public void Execute()
+        public string Execute()
         {
             throw new System.NotImplementedException();
         }

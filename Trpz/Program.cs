@@ -43,21 +43,26 @@ namespace Trpz
             //AutomationTool.SetAction(sendMessageWithADelay);
             //AutomationTool.ExecuteAction();
 
-            List<string> commandList = new List<string>();
-            commandList.Add("send discord delay 4 Vasyan 'NIAAAAA'");
-            commandList.Add("+");
-            commandList.Add("set skype online");
-            commandList.Add("+");
-            commandList.Add("news bbc json");
-            commandList.Add("+");
-            commandList.Add("send skype beinglate 10 Jora 'boomer umer'");
-            commandList.Add("+");
-            commandList.Add("topic dvach xml");
+            //List<string> commandList = new List<string>()
+            //{
+            //    "send discord delay 4 Vasyan 'NIAAAAA'", "+",
+            //    "set skype online", "+",
+            //    "news bbc json", "+",
+            //    "send skype beinglate 10 Jora 'boomer umer'", "+",
+            //    "topic dvach xml"
+            //};
 
             Context context = new Context();
-            IExpression expression = context.Evaluate(commandList);
-            expression.Interpret();
+            //IExpression expression = context.Evaluate(commandList);
+            IExpression expression = context.Evaluate("send discord delay 4 Vasyan 'NIAAAAA' + " +
+                                                      "set skype online + " +
+                                                      "news bbc xml + " +
+                                                      "send skype beinglate 10 Jora 'boomer umer' + " +
+                                                      "topic dvach xml");
+            string result = expression.Interpret();
+            Console.WriteLine(result);
             Console.ReadKey();
+
         }
     }
 }

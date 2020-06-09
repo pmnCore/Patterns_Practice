@@ -8,6 +8,6 @@ namespace Trpz.News
 
         public BbcTopDiscussion(string data) => Data = data;
 
-        public void DisplayDiscussion() => Console.WriteLine($"BBC top discussion: {Data}");
+        public string DisplayDiscussion() => $"BBC top discussion: {Data}";
     }
 }

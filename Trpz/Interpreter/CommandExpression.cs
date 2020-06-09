@@ -11,13 +11,13 @@ namespace Trpz
         private string Command { get; set; }
         public CommandExpression(string command) => Command = command;
 
-        public void Interpret()
+        public string Interpret()
         {
             string[] commandParameters = SplitCommandString(out string message);
             ICommand command = GetCommand(commandParameters, message);
             AutomationTool.SetAction(command);
-            AutomationTool.ExecuteAction();
-
+            return AutomationTool.ExecuteAction();
+            
         }
 
         string[] SplitCommandString(out string message)

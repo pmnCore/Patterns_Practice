@@ -6,8 +6,8 @@ namespace Trpz.SocialNetworks
     {
         private Skype Skype { get; set; } = new Skype();
 
-        public void SendMessageOfBeingLate(string comment, TimeSpan time, object target) => Skype.MessageOfBeingLate(comment, time, target);
+        public string SendMessageOfBeingLate(string comment, TimeSpan time, object target) => Skype.MessageOfBeingLate(comment, time, target);
 
-        public void SendMessageWithADelay(string message, TimeSpan time, object target) => Skype.MessageWithADelay(message, time, target);
+        public string SendMessageWithADelay(string message, TimeSpan time, object target) => Skype.MessageWithADelay(message, time, target);
     }
 }

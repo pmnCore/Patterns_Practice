@@ -8,6 +8,6 @@ namespace Trpz.News
 
         public DvachTopDiscussion(string data) => Data = data;
 
-        public void DisplayDiscussion() => Console.WriteLine($"Here we go, the best holywar thread: {Data}");
+        public string DisplayDiscussion() => $"Here we go, the best holywar thread: {Data}";
     }
 }

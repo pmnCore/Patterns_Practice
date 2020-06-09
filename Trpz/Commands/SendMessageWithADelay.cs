@@ -18,6 +18,6 @@ namespace Trpz.Commands
             Target = target;
         }
 
-        public void Execute() => Receiver.SendMessageWithADelay(Message, Time, Target);
+        public string Execute() => Receiver.SendMessageWithADelay(Message, Time, Target);
     }
 }

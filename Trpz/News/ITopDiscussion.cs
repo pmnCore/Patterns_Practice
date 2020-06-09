@@ -2,6 +2,6 @@
 {
     public interface ITopDiscussion
     {
-        void DisplayDiscussion();
+        string DisplayDiscussion();
     }
 }
